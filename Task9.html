@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>JS Task-3</title>
+    <style>
+      .center-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .box {
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+      }
+      .left-align {
+        text-align: left;
+      }
+      .btn-space {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-box">
+      <div class="box">
+        <center>
+          <label class="h4" for="num1">1st Number:</label>
+          <input type="number" id="num1" /><br />
+          <label class="h4" for="num2">2nd Number:</label>
+          <input type="number" id="num2" />
+          <br /><br />
+
+          <!-- Buttons with left alignment and space -->
+          <div class="left-align">
+            <button
+              class="btn btn-primary btn-sm btn-space"
+              type="button"
+              onclick="mymul()"
+            >
+              Multiply
+            </button>
+            <button
+              class="btn btn-primary btn-sm"
+              type="button"
+              onclick="mydiv()"
+            >
+              Division
+            </button>
+          </div>
+          <br />
+
+          <div id="result" class="left-align">
+            <p class="text-success h5"></p>
+          </div>
+
+          <script>
+            function mymul() {
+              let x = document.getElementById("num1").value;
+              let y = document.getElementById("num2").value;
+              if (x === "" || y == "") {
+                document.getElementById("result").innerHTML =
+                  "Please Enter a number";
+              } else {
+                let res = x * y;
+                document.getElementById("result").innerHTML =
+                  "The Result Is :<br>" + res;
+              }
+            }
+            function mydiv() {
+              let x = document.getElementById("num1").value;
+              let y = document.getElementById("num2").value;
+              if (x === "" || y == "") {
+                document.getElementById("result").innerHTML =
+                  "Please Enter a number";
+              } else {
+                let res = x / y;
+                document.getElementById("result").innerHTML =
+                  "The Result Is :<br>" + res;
+              }
+            }
+          </script>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
